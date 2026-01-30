@@ -138,7 +138,13 @@ h1 {
 }
 
 .AR{
-    width: 20px;
+    width: 23px;
+    position: absolute; 
+    left: 20px; 
+}
+
+.sarhne{
+    width: 23px;
     position: absolute; 
     left: 20px; 
 }
