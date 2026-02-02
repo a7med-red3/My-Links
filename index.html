@@ -26,9 +26,8 @@
             </p>
         </header>
         
-        
-
-        <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu()">
+        <!-- Call Me Menu -->
+        <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Choose a Number</h3>
                 <a href="tel:+201284825686" class="num-link">
@@ -37,14 +36,16 @@
                 <a href="tel:+201031898392" class="num-link">
                     <i class="fas fa-sim-card"></i>010 318 98 392
                 </a>
-                <button class="close-btn" onclick="toggleCallMenu()">Cancel</button>
+                <button class="close-btn" onclick="toggleCallMenu(false)">Cancel</button>
             </div>
         </div>
 
         <ul class="links">
-            <li> <div class="contact-card" onclick="toggleCallMenu()">
-                <span>Call Me</span>
-            </div></li>
+            <li>
+                <div class="contact-card" onclick="toggleCallMenu(true)">
+                    <span>Call Me</span>
+                </div>
+            </li>
             <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
             <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1CZmvEN8GP/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
@@ -59,6 +60,7 @@
             </li>
         </ul>
         
+        <!-- Visitor Counter -->
         <div class="visitor-box">
             <div class="counter-content">
                 <i class="fas fa-fire"></i> 
@@ -74,14 +76,13 @@
         </footer>
     </div>
 
-
     <script>
-        function toggleCallMenu() {
+        function toggleCallMenu(open) {
             const menu = document.getElementById('call-menu');
-            if (menu.style.display === 'flex') {
-                menu.style.display = 'none';
-            } else {
+            if(open) {
                 menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
             }
         }
     </script>
