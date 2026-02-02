@@ -18,7 +18,6 @@
             <h1>Ahmed Reda</h1>
             <p class="MU">FCIS | MU</p>
             <div class="tags">
-        
                 <span class="tag">Backend Developer</span>
                 <span class="tag">Graphic Designer</span>
             </div>
@@ -26,8 +25,26 @@
                 Building & Designing.
             </p>
         </header>
+        
+        
+
+        <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu()">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Choose a Number</h3>
+                <a href="tel:+201284825686" class="num-link">
+                    <i class="fas fa-sim-card"></i>012 848 25 686
+                </a>
+                <a href="tel:+201031898392" class="num-link">
+                    <i class="fas fa-sim-card"></i>010 318 98 392
+                </a>
+                <button class="close-btn" onclick="toggleCallMenu()">Cancel</button>
+            </div>
+        </div>
 
         <ul class="links">
+            <li> <div class="contact-card" onclick="toggleCallMenu()">
+                <span>Call Me</span>
+            </div></li>
             <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
             <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1CZmvEN8GP/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
@@ -35,18 +52,38 @@
             <li><a href="https://www.linkedin.com/in/ahmed-reda-446147376" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
             <li><a href="https://github.com/a7med-red3" target="_blank"><i class="fab fa-github"></i> Github</a></li>
             <li><a href="https://ahmedred3.sarhne.com" target="_blank">
-            <img class="sarhne" src="img/sarhne.png" alt="sarhne">
-            Sarhne</a></li>
+                <img class="sarhne" src="img/sarhne.png" alt="sarhne"> Sarhne</a>
+            </li>
             <li class="portfolio-btn"><a href="https://a7med-red3.github.io/My-Portfolio/" target="_blank">
-            <img class="AR" src="img/AR.svg">
-            My Portfolio </a></li>
+                <img class="AR" src="img/AR.svg"> My Portfolio </a>
+            </li>
         </ul>
         
+        <div class="visitor-box">
+            <div class="counter-content">
+                <i class="fas fa-fire"></i> 
+                <div class="counter-text">
+                    <span id="visitor-count">+300</span>
+                </div>
+                <p>Views</p>
+            </div>
+        </div>
+
         <footer class="footer">
-            © 2026 Ahmed Reda. All rights reserved.
+            © 2026 Pixel. All rights reserved.
         </footer>
     </div>
 
 
+    <script>
+        function toggleCallMenu() {
+            const menu = document.getElementById('call-menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
