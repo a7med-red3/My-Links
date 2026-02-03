@@ -170,12 +170,9 @@ h1 {
     transition: 0.3s;
 }
 
-.powered-by:hover {
-    opacity: 1;
-}
-
 .powered-by img {
     height: 32px;
+    border_radious: 50%;
     cursor: pointer;
 }
 
@@ -225,5 +222,6 @@ h1 {
     h1 { font-size: 1.7rem; }
     .my_photo { width: 130px; height: 130px; }
 }
+
 
 
