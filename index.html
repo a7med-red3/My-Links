@@ -5,110 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahmed Reda | Links</title>
 
-    <link rel="icon" href="img/user.svg" type="image/svg">
+    <link rel="icon" href="img/user.svg" type="image/svg+xml">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-<div class="container">
-
-    <header class="top">
-        <!-- Share Button -->
-        <button class="share-btn" onclick="toggleShare(true)">
-            <i class="fas fa-share-alt"></i>
-        </button>
-
-        <div class="image">
-            <img class="my_photo" src="img/my_photo.jpg" alt="Ahmed Reda">
+    <div class="container">
+        <div class="share-trigger" onclick="toggleShareMenu(true)" title="Share Profile">
+            <i class="fas fa-share-nodes"></i>
         </div>
 
-        <h1>Ahmed Reda</h1>
-        <p class="MU">FCIS | MU</p>
+        <header class="top">
+            <div class="image">
+                <img class="my_photo" src="img/my_photo.jpg?v=1" alt="Ahmed Reda">
+            </div>
+            <h1>Ahmed Reda</h1>
+            <p class="MU">FCIS | MU</p>
+            <div class="tags">
+                <span class="tag">Backend Developer</span>
+                <span class="tag">Graphic Designer</span>
+            </div>
+            <p class="bio">Building & Designing.</p>
+        </header>
 
-        <div class="tags">
-            <span class="tag">Backend Developer</span>
-            <span class="tag">Graphic Designer</span>
+        <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Choose a Number</h3>
+                <a href="tel:+201284825686" class="num-link">
+                    <i class="fas fa-sim-card"></i>  012 848 25 686
+                </a>
+                <a href="tel:+201031898392" class="num-link">
+                    <i class="fas fa-sim-card"></i>  010 318 98 392
+                </a>
+                <button class="close-btn" onclick="toggleCallMenu(false)">Cancel</button>
+            </div>
         </div>
 
-        <p class="bio">Building & Designing.</p>
-    </header>
+        <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Share My Card</h3>
+                
+                <div id="qrcode-container">
+                    <img id="qr-code" src="" alt="QR Code">
+                </div>
+                
+                <div class="share-actions">
+                    <button class="num-link" onclick="copyToClipboard()">
+                        <i class="fas fa-copy"></i> <span id="copy-text">Copy Link</span>
+                    </button>
+                </div>
+                <button class="close-btn" onclick="toggleShareMenu(false)">Close</button>
+            </div>
+        </div>
 
-    <ul class="links">
-        <li>
-            <a href="javascript:void(0)" onclick="toggleCallMenu(true)">
-                <i class="fas fa-phone"></i> Call Me
+        <ul class="links">
+            <li>
+                <a href="javascript:void(0)" onclick="toggleCallMenu(true)">
+                    <i class="fas fa-phone"></i> Call Me
+                </a>
+            </li>
+            <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+            <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1CZmvEN8GP/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@a7med__red3" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.linkedin.com/in/ahmed-reda-446147376" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+            <li><a href="https://github.com/a7med-red3" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+            <li>
+                <a href="https://ahmedred3.sarhne.com" target="_blank">
+                    <img class="sarhne" src="img/sarhne.png" alt="sarhne"> Sarhne
+                </a>
+            </li>
+            <li class="portfolio-btn">
+                <a href="https://a7med-red3.github.io/My-Portfolio/" target="_blank">
+                    <img class="AR" src="img/AR.svg" alt="AR"> My Portfolio
+                </a>
+            </li>
+        </ul>
+
+
+        <footer class="footer">
+            <a href="https://a7med-red3.github.io/My-Links/" target="_blank" class="powered-by">
+                <span>Create your page > </span>
+                <img src="img/logo.png" alt="Pixel Logo" class="pi-logo">
             </a>
-        </li>
-        <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
-        <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
-        <li><a href="#"><i class="fab fa-linkedin"></i> Linkedin</a></li>
-        <li><a href="#"><i class="fab fa-github"></i> Github</a></li>
-    </ul>
-
-    <!-- Powered By Logo -->
-    
-
-    <footer class="footer">
-        <a href="https://a7med-red3.github.io/My-Links/" target="_blank" class="brand">
-            <span>Powered by </span>
-            <img src="img/logo.png" alt="Pi">
-        </a>
-    </footer>
-
-</div>
-
-<!-- Share Popup -->
-<div id="share-menu" class="overlay" onclick="toggleShare(false)">
-    <div class="popup" onclick="event.stopPropagation()">
-        <h3>Share This Card</h3>
-
-        <input id="shareLink" readonly>
-
-        <button class="copy-btn" onclick="copyLink()">
-            <i class="fas fa-copy"></i> Copy Link
-        </button>
-
-        <div id="qrcode"></div>
-
-        <button class="close-btn" onclick="toggleShare(false)">Close</button>
+            <p class="copyright">© 2026 Pixel. All rights reserved.</p>
+        </footer>
     </div>
-</div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        // دالة الاتصال
+        function toggleCallMenu(open) {
+            const menu = document.getElementById('call-menu');
+            if(open) {
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-<script>
-function toggleShare(open) {
-    const menu = document.getElementById('share-menu');
-    if (open) {
-        menu.style.display = 'flex';
-        document.getElementById('shareLink').value = window.location.href;
+        // دالة الشير والباركود
+        function toggleShareMenu(open) {
+            const menu = document.getElementById('share-menu');
+            const qrImg = document.getElementById('qr-code');
+            if(open) {
+                const currentUrl = window.location.href;
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
+                
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('copy-text').innerText = "Copy Link";
+            }
+        }
 
-        document.getElementById('qrcode').innerHTML = "";
-        new QRCode(document.getElementById("qrcode"), {
-            text: window.location.href,
-            width: 160,
-            height: 160,
-            colorDark: "#ffffff",
-            colorLight: "transparent"
-        });
-
-        document.body.style.overflow = 'hidden';
-    } else {
-        menu.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }
-}
-
-function copyLink() {
-    const input = document.getElementById('shareLink');
-    input.select();
-    document.execCommand("copy");
-}
-</script>
-
+        // دالة النسخ
+        function copyToClipboard() {
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                const copyText = document.getElementById('copy-text');
+                copyText.innerText = "Copied! ✅";
+                setTimeout(() => {
+                    copyText.innerText = "Copy Link";
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
