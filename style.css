@@ -160,6 +160,28 @@ h1 {
     border-top: 2px solid var(--accent-color);
 }
 
+
+
+.powered-by {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    opacity: 0.65;
+    transition: 0.3s;
+}
+
+.powered-by:hover {
+    opacity: 1;
+}
+
+.powered-by img {
+    height: 32px;
+    cursor: pointer;
+}
+
+
+
+
 @keyframes slideUp {
     from { transform: translateY(100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
@@ -203,4 +225,5 @@ h1 {
     h1 { font-size: 1.7rem; }
     .my_photo { width: 130px; height: 130px; }
 }
+
 
