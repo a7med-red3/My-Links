@@ -11,127 +11,164 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-
-    <div class="share-trigger" onclick="toggleShareMenu(true)">
-        <i class="fas fa-share-nodes"></i>
-    </div>
-
-    <header class="top">
-        <div class="image">
-            <img class="my_photo" src="img/my_photo.jpg" alt="Ahmed Reda">
+    <div class="container">
+        <div class="share-trigger" onclick="toggleShareMenu(true)" title="Share Profile">
+            <i class="fas fa-share-nodes"></i>
         </div>
-        <h1>Ahmed Reda</h1>
-        <p class="MU">FCIS | MU</p>
-        <div class="tags">
-            <span class="tag">Backend Developer</span>
-            <span class="tag">Graphic Designer</span>
-        </div>
-        <p class="bio">Building & Designing.</p>
-    </header>
 
-    <!-- Call Menu -->
-    <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
-        <div class="call-menu-content" onclick="event.stopPropagation()">
-            <h3>Choose a Number</h3>
-            <a href="tel:+201284825686" class="num-link">
-                <i class="fas fa-sim-card"></i> 012 848 25 686
-            </a>
-            <a href="tel:+201031898392" class="num-link">
-                <i class="fas fa-sim-card"></i> 010 318 98 392
-            </a>
-            <button class="close-btn" onclick="toggleCallMenu(false)">Cancel</button>
-        </div>
-    </div>
-
-    <!-- Share Menu -->
-    <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
-        <div class="call-menu-content" onclick="event.stopPropagation()">
-            <h3>Share My Card</h3>
-            <div id="qrcode-container">
-                <img id="qr-code" src="" alt="QR Code">
+        <header class="top">
+            <div class="image">
+                <img class="my_photo" src="img/my_photo.jpg?v=1" alt="Ahmed Reda">
             </div>
-            <button class="num-link" onclick="copyToClipboard()">
-                <i class="fas fa-copy"></i> <span id="copy-text">Copy Link</span>
-            </button>
-            <button class="close-btn" onclick="toggleShareMenu(false)">Close</button>
+            <h1>Ahmed Reda</h1>
+            <p class="MU">FCIS | MU</p>
+            <div class="tags">
+                <span class="tag">Backend Developer</span>
+                <span class="tag">Graphic Designer</span>
+            </div>
+            <p class="bio">Building & Designing.</p>
+        </header>
+
+        <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Choose a Number</h3>
+                <a href="tel:+201284825686" class="num-link">
+                    <i class="fas fa-sim-card"></i>  012 848 25 686
+                </a>
+                <a href="tel:+201031898392" class="num-link">
+                    <i class="fas fa-sim-card"></i>  010 318 98 392
+                </a>
+                <button class="close-btn" onclick="toggleCallMenu(false)">Cancel</button>
+            </div>
         </div>
+
+        <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Share My Card</h3>
+                
+                <div id="qrcode-container">
+                    <img id="qr-code" src="" alt="QR Code">
+                </div>
+                
+                <div class="share-actions">
+                    <button class="num-link" onclick="copyToClipboard()">
+                        <i class="fas fa-copy"></i> <span id="copy-text">Copy Link</span>
+                    </button>
+                </div>
+                <button class="close-btn" onclick="toggleShareMenu(false)">Close</button>
+            </div>
+        </div>
+
+        <!-- Payment Menu -->
+        <div id="payment-menu" class="call-menu-overlay" onclick="togglePaymentMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Choose Payment Method</h3>
+
+                <a href="tel:*9*7*01031898392*#" class="num-link">
+                    <i class="fas fa-mobile-alt"></i>
+                    Vodafone Cash
+                </a>
+
+                <a href="https://ipn.eg/S/ahmedreda277019/instapay/9JUvPa"
+                target="_blank"
+                class="num-link">
+                    <i class="fas fa-building-columns"></i>
+                    InstaPay
+                </a>
+
+                <button class="close-btn" onclick="togglePaymentMenu(false)">Close</button>
+            </div>
+        </div>
+
+        <ul class="links">
+            <li>
+                <a href="javascript:void(0)" onclick="toggleCallMenu(true)">
+                    <i class="fas fa-phone"></i> Call Me
+                </a>
+            </li>
+            <li><a href="#" onclick="togglePaymentMenu(true)"><i class="fas fa-money-bill-wave"></i> Payment</a></li>
+            <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
+            <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1CZmvEN8GP/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
+            <li><a href="https://www.tiktok.com/@a7med__red3" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a></li>
+            <li><a href="https://www.linkedin.com/in/ahmed-reda-446147376" target="_blank"><i class="fab fa-linkedin"></i> Linkedin</a></li>
+            <li><a href="https://github.com/a7med-red3" target="_blank"><i class="fab fa-github"></i> Github</a></li>
+            <li>
+                <a href="https://ahmedred3.sarhne.com" target="_blank">
+                    <img class="sarhne" src="img/sarhne.png" alt="sarhne"> Sarhne
+                </a>
+            </li>
+            <li class="portfolio-btn">
+                <a href="https://a7med-red3.github.io/My-Portfolio/" target="_blank">
+                    <img class="AR" src="img/AR.svg" alt="AR"> My Portfolio
+                </a>
+            </li>
+        </ul>
+
+
+        <footer class="footer">
+            <a href="https://wa.me/201284825686" target="_blank" class="powered-by">
+                <span>Create your page > </span>
+                <img src="img/logo.png" alt="Pixel Logo" class="pi-logo">
+            </a>
+            <p class="copyright">© 2026 Pixel. All rights reserved.</p>
+        </footer>
     </div>
 
-    <!-- Payment Menu -->
-    <div id="payment-menu" class="call-menu-overlay" onclick="togglePaymentMenu(false)">
-        <div class="call-menu-content" onclick="event.stopPropagation()">
-            <h3>Choose Payment Method</h3>
+    <script>
+        // دالة الاتصال
+        function toggleCallMenu(open) {
+            const menu = document.getElementById('call-menu');
+            if(open) {
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-            <a href="tel:*9*7*01031898392*#" class="num-link">
-                <i class="fas fa-mobile-alt"></i>
-                Vodafone Cash
-            </a>
+        // دالة الشير والباركود
+        function toggleShareMenu(open) {
+            const menu = document.getElementById('share-menu');
+            const qrImg = document.getElementById('qr-code');
+            if(open) {
+                const currentUrl = window.location.href;
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
+                
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('copy-text').innerText = "Copy Link";
+            }
+        }
 
-            <a href="https://ipn.eg/S/ahmedreda277019/instapay/9JUvPa"
-               target="_blank"
-               class="num-link">
-                <i class="fas fa-building-columns"></i>
-                InstaPay
-            </a>
+        // دالة النسخ
+        function copyToClipboard() {
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                const copyText = document.getElementById('copy-text');
+                copyText.innerText = "Copied! ✅";
+                setTimeout(() => {
+                    copyText.innerText = "Copy Link";
+                }, 2000);
+            });
+        }
 
-            <button class="close-btn" onclick="togglePaymentMenu(false)">Close</button>
-        </div>
-    </div>
+        function togglePaymentMenu(open) {
+            const menu = document.getElementById('payment-menu');
+            if(open) {
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
 
-    <ul class="links">
-        <li><a onclick="toggleCallMenu(true)"><i class="fas fa-phone"></i> Call Me</a></li>
-        <li><a href="#" onclick="togglePaymentMenu(true)"><i class="fas fa-money-bill-wave"></i> Payment</a></li>
-        <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
-        <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
-        <li><a href="https://github.com/a7med-red3" target="_blank"><i class="fab fa-github"></i> Github</a></li>
-    </ul>
-
-</div>
-
-<script>
-function openMenu(menu) {
-    menu.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    setTimeout(() => menu.classList.add('active'), 10);
-}
-
-function closeMenu(menu) {
-    menu.classList.remove('active');
-    setTimeout(() => {
-        menu.style.display = 'none';
-        document.body.style.overflow = 'auto';
-    }, 300);
-}
-
-function toggleCallMenu(open) {
-    const menu = document.getElementById('call-menu');
-    open ? openMenu(menu) : closeMenu(menu);
-}
-
-function toggleShareMenu(open) {
-    const menu = document.getElementById('share-menu');
-    if (open) {
-        document.getElementById('qr-code').src =
-            `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(location.href)}`;
-        openMenu(menu);
-    } else closeMenu(menu);
-}
-
-function togglePaymentMenu(open) {
-    const menu = document.getElementById('payment-menu');
-    open ? openMenu(menu) : closeMenu(menu);
-}
-
-function copyToClipboard() {
-    navigator.clipboard.writeText(location.href);
-    document.getElementById('copy-text').innerText = "Copied!";
-}
-</script>
-
+    </script>
 </body>
 </html>
-
 
