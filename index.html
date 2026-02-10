@@ -29,7 +29,6 @@
             <p class="bio">Building & Designing.</p>
         </header>
 
-        <!-- Call Menu -->
         <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Choose a Number</h3>
@@ -43,7 +42,6 @@
             </div>
         </div>
 
-        <!-- Share Menu -->
         <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Share My Card</h3>
@@ -118,44 +116,36 @@
     </div>
 
     <script>
-        // Toggle function using active class
+        // دالة الاتصال
         function toggleCallMenu(open) {
             const menu = document.getElementById('call-menu');
-            if(open){
-                menu.classList.add('active');
+            if(open) {
+                menu.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             } else {
-                menu.classList.remove('active');
+                menu.style.display = 'none';
                 document.body.style.overflow = 'auto';
             }
         }
 
+        // دالة الشير والباركود
         function toggleShareMenu(open) {
             const menu = document.getElementById('share-menu');
             const qrImg = document.getElementById('qr-code');
             if(open) {
                 const currentUrl = window.location.href;
                 qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
-                menu.classList.add('active');
+                
+                menu.style.display = 'flex';
                 document.body.style.overflow = 'hidden';
             } else {
-                menu.classList.remove('active');
+                menu.style.display = 'none';
                 document.body.style.overflow = 'auto';
                 document.getElementById('copy-text').innerText = "Copy Link";
             }
         }
 
-        function togglePaymentMenu(open) {
-            const menu = document.getElementById('payment-menu');
-            if(open){
-                menu.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            } else {
-                menu.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        }
-
+        // دالة النسخ
         function copyToClipboard() {
             const currentUrl = window.location.href;
             navigator.clipboard.writeText(currentUrl).then(() => {
@@ -167,13 +157,18 @@
             });
         }
 
-        // Stop propagation for all buttons and links inside overlays
-        ['call-menu', 'share-menu', 'payment-menu'].forEach(id => {
-            const overlay = document.getElementById(id);
-            overlay.querySelectorAll('button, a').forEach(el => {
-                el.addEventListener('click', e => e.stopPropagation());
-            });
-        });
+        function togglePaymentMenu(open) {
+            const menu = document.getElementById('payment-menu');
+            if(open) {
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
     </script>
 </body>
 </html>
+
