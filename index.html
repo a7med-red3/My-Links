@@ -115,20 +115,19 @@
         </footer>
     </div>
 
+    
     <script>
-        // دالة الاتصال
-        function toggleCallMenu(open) {
+      function toggleCallMenu(open) {
             const menu = document.getElementById('call-menu');
             if(open) {
-                menu.style.display = 'flex';
+                menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
-                menu.style.display = 'none';
+                menu.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
-
-        // دالة الشير والباركود
+        
         function toggleShareMenu(open) {
             const menu = document.getElementById('share-menu');
             const qrImg = document.getElementById('qr-code');
@@ -136,39 +135,28 @@
                 const currentUrl = window.location.href;
                 qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
                 
-                menu.style.display = 'flex';
+                menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
-                menu.style.display = 'none';
+                menu.classList.remove('active');
                 document.body.style.overflow = 'auto';
                 document.getElementById('copy-text').innerText = "Copy Link";
             }
         }
-
-        // دالة النسخ
-        function copyToClipboard() {
-            const currentUrl = window.location.href;
-            navigator.clipboard.writeText(currentUrl).then(() => {
-                const copyText = document.getElementById('copy-text');
-                copyText.innerText = "Copied! ✅";
-                setTimeout(() => {
-                    copyText.innerText = "Copy Link";
-                }, 2000);
-            });
-        }
-
+        
         function togglePaymentMenu(open) {
             const menu = document.getElementById('payment-menu');
             if(open) {
-                menu.style.display = 'flex';
+                menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
-                menu.style.display = 'none';
+                menu.classList.remove('active');
                 document.body.style.overflow = 'auto';
             }
         }
-
+        
     </script>
 </body>
 </html>
+
 
