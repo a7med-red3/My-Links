@@ -29,6 +29,7 @@
             <p class="bio">Building & Designing.</p>
         </header>
 
+        <!-- Call Menu -->
         <div id="call-menu" class="call-menu-overlay" onclick="toggleCallMenu(false)">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Choose a Number</h3>
@@ -42,6 +43,7 @@
             </div>
         </div>
 
+        <!-- Share Menu -->
         <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Share My Card</h3>
@@ -115,11 +117,11 @@
         </footer>
     </div>
 
-    
     <script>
-      function toggleCallMenu(open) {
+        // Toggle function using active class
+        function toggleCallMenu(open) {
             const menu = document.getElementById('call-menu');
-            if(open) {
+            if(open){
                 menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
@@ -127,14 +129,13 @@
                 document.body.style.overflow = 'auto';
             }
         }
-        
+
         function toggleShareMenu(open) {
             const menu = document.getElementById('share-menu');
             const qrImg = document.getElementById('qr-code');
             if(open) {
                 const currentUrl = window.location.href;
                 qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
-                
                 menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
@@ -143,10 +144,10 @@
                 document.getElementById('copy-text').innerText = "Copy Link";
             }
         }
-        
+
         function togglePaymentMenu(open) {
             const menu = document.getElementById('payment-menu');
-            if(open) {
+            if(open){
                 menu.classList.add('active');
                 document.body.style.overflow = 'hidden';
             } else {
@@ -154,9 +155,25 @@
                 document.body.style.overflow = 'auto';
             }
         }
-        
+
+        function copyToClipboard() {
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                const copyText = document.getElementById('copy-text');
+                copyText.innerText = "Copied! ✅";
+                setTimeout(() => {
+                    copyText.innerText = "Copy Link";
+                }, 2000);
+            });
+        }
+
+        // Stop propagation for all buttons and links inside overlays
+        ['call-menu', 'share-menu', 'payment-menu'].forEach(id => {
+            const overlay = document.getElementById(id);
+            overlay.querySelectorAll('button, a').forEach(el => {
+                el.addEventListener('click', e => e.stopPropagation());
+            });
+        });
     </script>
 </body>
 </html>
-
-
