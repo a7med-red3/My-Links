@@ -60,8 +60,6 @@
             </div>
         </div>
 
-
-        <!-- Payment Menu -->
         <div id="payment-menu" class="call-menu-overlay" onclick="togglePaymentMenu(false)" style="display: none;">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Choose Payment Method</h3>
@@ -113,7 +111,7 @@
 
 
         <footer class="footer">
-            <a href="https://wa.me/201284825686" target="_blank" class="powered-by">
+            <a href="https://pixel-card.github.io/pixel/" target="_blank" class="powered-by">
                 <span>Create your page > </span>
                 <img src="img/logo.png" alt="Pixel Logo" class="pi-logo">
             </a>
@@ -122,7 +120,7 @@
     </div>
 
     <script>
-        // دالة الاتصال
+
         function toggleCallMenu(open) {
             const menu = document.getElementById('call-menu');
             if(open) {
@@ -134,7 +132,7 @@
             }
         }
 
-        // دالة الشير والباركود
+
         function toggleShareMenu(open) {
             const menu = document.getElementById('share-menu');
             const qrImg = document.getElementById('qr-code');
@@ -151,7 +149,6 @@
             }
         }
 
-        // دالة النسخ
         function copyToClipboard() {
             const currentUrl = window.location.href;
             navigator.clipboard.writeText(currentUrl).then(() => {
@@ -178,4 +175,3 @@
     </script>
 </body>
 </html>
-
