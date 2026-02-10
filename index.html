@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <div class="container">
         <div class="share-trigger" onclick="toggleShareMenu(true)" title="Share Profile">
             <i class="fas fa-share-nodes"></i>
@@ -59,8 +60,9 @@
             </div>
         </div>
 
+
         <!-- Payment Menu -->
-        <div id="payment-menu" class="call-menu-overlay" onclick="togglePaymentMenu(false)">
+        <div id="payment-menu" class="call-menu-overlay" onclick="togglePaymentMenu(false)" style="display: none;">
             <div class="call-menu-content" onclick="event.stopPropagation()">
                 <h3>Choose Payment Method</h3>
 
@@ -86,7 +88,11 @@
                     <i class="fas fa-phone"></i> Call Me
                 </a>
             </li>
-            <li><a href="#" onclick="togglePaymentMenu(true)"><i class="fas fa-money-bill-wave"></i> Payment</a></li>
+            <li>
+                <a href="#" onclick="togglePaymentMenu(true)">
+                    <i class="fas fa-money-bill-wave"></i> Payment
+                </a>
+            </li>
             <li><a href="https://wa.me/201284825686" target="_blank"><i class="fab fa-whatsapp"></i> Whatsapp</a></li>
             <li><a href="https://www.instagram.com/a7med.red3" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1CZmvEN8GP/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></li>
@@ -159,15 +165,16 @@
 
         function togglePaymentMenu(open) {
             const menu = document.getElementById('payment-menu');
-            if(open) {
-                menu.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-            } else {
-                menu.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
+            open ? openMenu(menu) : closeMenu(menu);
         }
 
+        function openMenu(menu) {
+            menu.style.display = 'flex'; /* ممكن تستخدم flex أو block حسب CSS بتاعك */
+        }
+
+        function closeMenu(menu) {
+            menu.style.display = 'none';
+        }
     </script>
 </body>
 </html>
