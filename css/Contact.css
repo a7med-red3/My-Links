@@ -1,0 +1,254 @@
+/* Contact.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+    color:white;
+}
+
+body{
+    display:flex;
+    background:#070f1e;
+}
+
+/* زرار المينيو */
+#menu-toggle{
+    position:fixed;
+    top:15px;
+    left:15px;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:8px;
+    background:#123;
+    color:white;
+    cursor:pointer;
+    display:none;
+    z-index:1001;
+    font-size:22px;
+}
+
+/* المينيو */
+.menu{
+    background:#123;
+    width:70px;
+    height:100dvh;
+    padding:10px;
+    overflow:hidden;
+    transition:.3s;
+    flex-shrink:0;
+}
+.menu:hover{ width:220px; }
+
+ul{
+    list-style:none;
+    height:100%;
+    position:relative;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding-top:45px;
+    margin-bottom:20px;
+}
+
+.img-box{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    overflow:hidden;
+    border:3px solid #0d476c;
+    flex-shrink:0;
+}
+.img-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+ul li a{
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    gap:32px;
+    padding:14px;
+    border-radius:10px;
+    transition:.3s;
+    margin:8px 0;
+}
+
+ul li a:hover,
+.contact{
+    background:#0d486cdb;
+}
+
+ul li a i{
+    font-size:24px;
+    width:30px;
+}
+
+.share{
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.share a{
+    background:#b30000c3;
+}
+
+/* ====== Links (تم تحسينها فقط) ====== */
+
+.links2{
+    width:100%;
+    max-width:650px;
+    margin:30px auto;
+    padding:30px;
+}
+
+.links2 li{
+    margin-bottom:15px;
+}
+
+.links2 li a{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:18px 22px;
+    background:#10233b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:500;
+    transition:.3s;
+}
+
+.links2 li a:hover{
+    background:#0d476c;
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
+    border-color:#00d2ff;
+}
+
+.links2 li a i{
+    width:28px;
+    text-align:center;
+    font-size:22px;
+}
+
+.sarhne{
+    width:24px;
+    height:24px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    #menu-toggle{
+        display:block;
+    }
+
+    .links2{
+        width:100%;
+        padding:90px 15px 20px;
+    }
+
+    .menu{
+        position:fixed;
+        top:0;
+        left:-240px;
+        width:180px;
+        z-index:1000;
+        padding:20px;
+    }
+
+    .menu.active{
+        left:0;
+    }
+
+    .menu:hover{
+        width:180px;
+    }
+}
+
+/* Overlays */
+.call-menu-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(8px);
+    display:none;
+    justify-content:center;
+    align-items:flex-end;
+    z-index:99999;
+}
+
+.call-menu-content{
+    background:#0a1628;
+    width:100%;
+    max-width:450px;
+    padding:30px 20px;
+    border-radius:30px 30px 0 0;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    border-top:2px solid #00d2ff;
+}
+
+#qrcode-container{
+    background:#fff;
+    padding:12px;
+    border-radius:12px;
+    width:fit-content;
+    margin:10px auto;
+}
+
+#qr-code{
+    width:140px;
+    height:140px;
+}
+
+.num-link{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    padding:18px;
+    background:#10233b;
+    border:1px solid rgba(0,210,255,.1);
+    border-radius:15px;
+    text-decoration:none;
+    font-size:1.1rem;
+    font-weight:600;
+    transition:.3s;
+    cursor:pointer;
+    width:100%;
+}
+
+.num-link:hover{
+    background:#0d476c;
+    border-color:#00d2ff;
+}
+
+.close-btn{
+    margin-top:10px;
+    padding:12px;
+    border:none;
+    background:none;
+    color:#ff4d4d;
+    font-weight:600;
+    cursor:pointer;
+}
+
+@media(max-width:480px){
+    .share-trigger{top:-10px;right:10px;}
+}

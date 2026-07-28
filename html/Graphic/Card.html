@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/graphic/card.css">
+    <link rel="icon" href="../../assist/img/AR.svg" type="image/svg+xml">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Ahmed Reda</title>
+</head>
+
+<body>
+
+    <button id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="menu">
+        <ul>
+            <li class="profile">
+                <div class="img-box">
+                    <img src="../../assist/img/user.JPG" alt="">
+                </div>
+                <h2>Ahmed</h2>
+            </li>
+
+            <li>
+                <a class="home" href="../../index.html">
+                    <i class="fas fa-home"></i>
+                    <p>Home</p>
+                </a>
+            </li>
+
+            <li>
+                <a class="fullstack" href="../Full Stack.html">
+                    <i class="fas fa-user-group"></i>
+                    <p>Full Stack</p>
+                </a>
+            </li>
+
+            <li>
+                <a class="graphic" href="../Graphic.html">
+                    <i class="fas fa-table"></i>
+                    <p>Graphic Design</p>
+                </a>
+            </li>
+
+            <li>
+                <a class="contact" href="../Contact.html">
+                    <i class="fas fa-envelope"></i>
+                    <p>Contact</p>
+                </a>
+            </li>
+
+            <li class="share">
+                <a href="#" class="share-trigger" onclick="toggleShareMenu(true)" title="Share Profile">
+                    <i class="fas fa-share-nodes"></i>
+                    <p>Share</p>
+                    
+                </a>                
+            </div>
+            </li>
+        </ul>
+
+        <div id="share-menu" class="call-menu-overlay" onclick="toggleShareMenu(false)">
+            <div class="call-menu-content" onclick="event.stopPropagation()">
+                <h3>Share My Card</h3>
+                
+                <div id="qrcode-container">
+                    <img id="qr-code" src="" alt="QR Code">
+                </div>
+                
+                <div class="share-actions">
+                    <button class="num-link" onclick="copyToClipboard()">
+                        <span id="copy-text">Copy Link</span>
+                    </button>
+                </div>
+                <button class="close-btn" onclick="toggleShareMenu(false)">Close</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -------------------------- -->
+
+    <nav>
+        <ul>
+            <li>
+                <a class="poster" href="../../html/Graphic.html">بوسترات</a>
+            </li>
+
+            <li>
+                <a class="menu2" href="../Graphic/Menu.html">مينيوهات</a>
+            </li>
+
+            <li>
+                <a class="card" href="../Graphic/Card.html">كروت افراح</a>
+            </li>
+
+            <li>
+                <a class="card2" href="../Graphic/Card2.html">كروت شخصيه</a>
+            </li>
+            
+        </ul>
+    </nav>
+
+        
+
+
+    <div class="full-img" id="fullimgbox">
+        <img src="../../assist/كروت افراح/img01.JPG" id="fullimg">
+        <span onclick="colsefullimg()">X</span>
+        <button class="prev" onclick="changeImg(-1)">&#10094;</button>
+        <button class="next" onclick="changeImg(1)">&#10095;</button>
+    </div>
+    <div class="img-gallery">
+        <img src="../../assist/كروت افراح/img01.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img02.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img03.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img04.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img05.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img06.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img07.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img08.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img09.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img10.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img11.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img12.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img13.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img14.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img15.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img16.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img17.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img18.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img19.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img20.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img21.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img22.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img23.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img24.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img25.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img26.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img27.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img28.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img29.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img30.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img31.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img32.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img33.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img34.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img35.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img36.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img37.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img38.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img39.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img40.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img41.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img42.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img43.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img44.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img45.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img46.JPG" onclick="openfullimg(this.src)">
+        <img src="../../assist/كروت افراح/img47.JPG" onclick="openfullimg(this.src)">
+    </div> 
+
+
+    <script>
+
+        const menu = document.querySelector(".menu");
+        const btn = document.getElementById("menu-toggle");
+
+        btn.onclick = () => {
+            menu.classList.toggle("active");
+        }
+
+        document.addEventListener("click", function (e) {
+
+            if (
+                window.innerWidth <= 768 &&
+                !menu.contains(e.target) &&
+                !btn.contains(e.target)
+            ) {
+                menu.classList.remove("active");
+            }
+
+        });
+
+
+
+        var fullimgbox = document.getElementById("fullimgbox");
+        var fullimg = document.getElementById("fullimg");
+        var images = Array.from(document.querySelectorAll(".img-gallery img"));
+        var currentIndex = 0;
+
+        function openfullimg(pic) {
+            fullimgbox.style.display = "flex";
+            fullimg.src = pic;
+            currentIndex = images.findIndex(img => img.src === pic);
+        }
+
+        function colsefullimg() {
+            fullimgbox.style.display = "none";
+        }
+
+        function changeImg(direction) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            fullimg.src = images[currentIndex].src;
+        }
+
+        document.addEventListener("keydown", function(e) {
+            if (fullimgbox.style.display === "none") return;
+            if (e.key === "ArrowRight") changeImg(1);
+            if (e.key === "ArrowLeft") changeImg(-1);
+            if (e.key === "Escape") colsefullimg();
+        });
+
+
+
+        // =====================
+
+        function toggleShareMenu(open) {
+            const menu = document.getElementById('share-menu');
+            const qrImg = document.getElementById('qr-code');
+            if(open) {
+                const currentUrl = window.location.href;
+                qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(currentUrl)}`;
+                
+                menu.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            } else {
+                menu.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                document.getElementById('copy-text').innerText = "Copy Link";
+            }
+        }
+
+        function copyToClipboard() {
+            const currentUrl = window.location.href;
+            navigator.clipboard.writeText(currentUrl).then(() => {
+                const copyText = document.getElementById('copy-text');
+                copyText.innerText = "Copied! ✅";
+                setTimeout(() => {
+                    copyText.innerText = "Copy Link";
+                }, 2000);
+            });
+        }
+
+        function openMenu(menu) {
+            menu.style.display = 'flex'; 
+        }
+
+        function closeMenu(menu) {
+            menu.style.display = 'none';
+        }
+
+    </script>
+
+
+
+</body>
+</html>
